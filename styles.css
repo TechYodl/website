@@ -209,3 +209,11 @@ footer a:hover { color: var(--text); text-decoration: underline; }
   .note-card { padding: 30px 24px; border-radius: 22px; } .note-card p { font-size: 17px; }
 }
 @media (prefers-reduced-motion: reduce) { .orbit2 .ring, .orbit2 .glow { animation: none; } .step { opacity: 1; transform: none; } }
+
+/* product cards v4: badge beside logo, single invitation link */
+.product .top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+.product .top .badge { background: color-mix(in srgb, var(--c) 10%, white); color: color-mix(in srgb, var(--c) 80%, #14112A); }
+.product .go { margin-top: auto; padding-top: 8px; font-size: 17px; font-weight: 700; color: color-mix(in srgb, var(--c) 85%, #14112A); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; }
+.product .go span { display: inline-block; transition: transform .25s ease; }
+.product .go:hover span, .product .go:focus-visible span { transform: translateX(5px); }
+.product .go:hover { text-decoration: underline; text-underline-offset: 4px; }
