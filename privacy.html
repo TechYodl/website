@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — techyodl</title>
+<meta name="description" content="How Techyodl handles information on techyodl.ai.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Privacy Policy — techyodl">
+<meta property="og:description" content="AI products for engineering teams: Revylx, FuseZap and Deplx.">
+<meta property="og:url" content="https://techyodl.ai/privacy.html">
+<meta property="og:image" content="https://techyodl.ai/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://techyodl.ai/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html#top"><img src="logo.svg" alt="techyodl" width="122" height="26"></a>
+    <div class="menu" id="menu"><a href="index.html#products">Products</a><a href="index.html#bug">Try it</a><a href="index.html#hello">About</a><a class="menu-cta" href="index.html#contact">Contact</a></div>
+    <a class="pill" href="index.html#contact">Say hello</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="legal">
+  <div class="wrap">
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: October 16, 2026</p>
+
+    <p>Techyodl (“we”, “us”) builds AI products including Revylx, FuseZap and Deplx. This policy explains what information we handle when you visit techyodl.ai or contact us, and how we use it. Each product’s own website and service may have its own privacy policy, which applies to it. We keep it short because we collect very little.</p>
+
+    <h2>What we collect</h2>
+    <ul>
+      <li><strong>Information you send us.</strong> When you email us, we receive your name, email address and anything you include in your message.</li>
+      <li><strong>Technical information.</strong> Our hosting and security providers automatically process standard request data, such as your IP address, browser type and the pages you request, to deliver the site and protect it from abuse.</li>
+    </ul>
+    <p>We do not use analytics, advertising or tracking cookies, and we do not run third-party trackers. Our fonts and images are served from our own domain. Our security provider may set a strictly necessary cookie to protect the site from automated attacks.</p>
+
+    <h2>How we use it</h2>
+    <ul>
+      <li>To reply to you and discuss our products, partnerships and early access.</li>
+      <li>To operate, secure and improve the website.</li>
+    </ul>
+    <p>We do not sell your personal information or share it for advertising.</p>
+
+    <h2>Who processes it for us</h2>
+    <p>We use trusted service providers to run the site and handle email: Cloudflare (content delivery and security), GitHub (website hosting) and our email provider. They process information on our behalf and under their own privacy and security commitments.</p>
+
+    <h2>How long we keep it</h2>
+    <p>We keep emails for as long as needed for the conversation or business relationship, and delete them on request unless we are required to keep them. Server logs are kept by our providers for limited periods under their policies.</p>
+
+    <h2>Your choices and rights</h2>
+    <p>You can ask us to access, correct or delete the personal information we hold about you, or to stop contacting you, by emailing <a href="mailto:tgpromod@techyodl.ai">tgpromod@techyodl.ai</a>. Depending on where you live, for example in the European Economic Area, the United Kingdom or California, you may have additional rights under local law, and we will honor them.</p>
+
+    <h2>Where your information is processed</h2>
+    <p>We are based in the United States, and information is processed in the United States and wherever our service providers operate.</p>
+
+    <h2>Children</h2>
+    <p>This site is intended for businesses and professionals and is not directed to children under 16.</p>
+
+    <h2>Changes</h2>
+    <p>If we change this policy, we will update the date at the top of this page.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about privacy: <a href="mailto:tgpromod@techyodl.ai">tgpromod@techyodl.ai</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2026 Techyodl. All rights reserved.</span>
+    <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:tgpromod@techyodl.ai">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.querySelector('nav'), btn = nav.querySelector('.menu-btn');
+  btn.addEventListener('click', () => { const o = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); });
+  nav.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }));
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>

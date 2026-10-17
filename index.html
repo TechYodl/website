@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>techyodl — Tools for people who build software</title>
+<meta name="description" content="A small team making AI tools for engineers: Revylx reviews your code and fixes what it finds, FuseZap gets new AI chips running today's models, and Deplx is still in the workshop.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="techyodl — Tools for people who build software">
+<meta property="og:description" content="Revylx, FuseZap and Deplx: AI tools from a small team that uses what it builds.">
+<meta property="og:url" content="https://techyodl.ai">
+<meta property="og:image" content="https://techyodl.ai/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://techyodl.ai/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.svg" alt="techyodl" width="122" height="26"></a>
+    <div class="menu" id="menu"><a href="#products">Products</a><a href="#bug">Try it</a><a href="#hello">About</a><a class="menu-cta" href="#contact">Contact</a></div>
+    <a class="pill" href="#contact">Say hello</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero center" id="top">
+  <div class="wrap">
+    <h1 class="reveal">Tools for people who<br><span class="grad">build software.</span></h1>
+    <p class="sub reveal d1">We’re a small team making the AI tools we always wanted at work. One reviews your code and fixes what it finds. One gets new AI chips running today’s models. And one is still in the workshop.</p>
+    <div class="links reveal d2">
+      <a class="pill" href="#products">See what we’re building</a>
+      <a class="more" href="#bug">Spot the bug ›</a>
+    </div>
+  </div>
+  <div class="orbit2 reveal d3" aria-label="Our three products">
+    <div class="glow" aria-hidden="true"></div>
+    <div class="ring" aria-hidden="true"></div>
+    <button class="dot" data-i="0" style="--c:#6366F1; left: calc(50% + (50% - 15px) * cos(90deg)); top: calc(50% + (50% - 15px) * sin(90deg))" aria-label="Revylx"></button>
+    <button class="dot" data-i="1" style="--c:#6C3BFF; left: calc(50% + (50% - 15px) * cos(-30deg)); top: calc(50% + (50% - 15px) * sin(-30deg))" aria-label="FuseZap"></button>
+    <button class="dot" data-i="2" style="--c:#38A3FF; left: calc(50% + (50% - 15px) * cos(210deg)); top: calc(50% + (50% - 15px) * sin(210deg))" aria-label="Deplx"></button>
+    <div class="center" aria-live="polite">
+      <div class="spot">
+        <div class="name">Revylx</div>
+        <div class="line">Catches bugs before your teammates do.</div>
+        <a href="#products">Take a look ›</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="alt" id="products">
+  <div class="wrap center">
+    <p class="kicker reveal">Products</p>
+    <h2 class="headline reveal d1">What we’re working on.</h2>
+    <p class="sub reveal d2">Three products, each at a different stage. Here’s honestly where each one stands.</p>
+    <div class="products">
+      <article class="product reveal" style="--c:#6366F1">
+        <img class="logo" src="assets/revylx.png" alt="Revylx logo" width="64" height="64">
+        <h3>Revylx</h3>
+        <p class="tag">Catches bugs before your teammates do.</p>
+        <p>Reviews every pull request, and your code as you write it, then suggests the fix right there in the comment.</p>
+        <div class="foot"><span class="badge">Early access</span><a class="more" href="https://revylx.techyodl.ai">Visit Revylx ›</a></div>
+      </article>
+      <article class="product reveal d1" style="--c:#6C3BFF">
+        <img class="logo" src="assets/fusezap.png" alt="FuseZap logo" width="64" height="64">
+        <h3>FuseZap</h3>
+        <p class="tag">Gets new AI chips running today’s models.</p>
+        <p>Chip makers build great hardware. FuseZap handles the software their customers expect to just work on day one.</p>
+        <div class="foot"><span class="badge">Working with chip makers</span><a class="more" href="https://fusezap.ai">Visit FuseZap ›</a></div>
+      </article>
+      <article class="product reveal d2" style="--c:#38A3FF">
+        <div class="soon-logo" aria-hidden="true"></div>
+        <h3>Deplx</h3>
+        <p class="tag">Turns an idea into working software.</p>
+        <p>A crew of AI agents that plan, build and check the work, and ask you before anything important happens.</p>
+        <div class="foot"><span class="badge">Still in the workshop</span><a class="more" href="#deplx">How it works ›</a></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="bug">
+  <div class="wrap center">
+    <p class="kicker reveal">Try it</p>
+    <h2 class="headline reveal d1">Can you spot the bug?</h2>
+    <p class="sub reveal d2">There’s one line here that will break in production. Tap the line you think it is.</p>
+    <div class="bug reveal">
+      <div class="code" role="group" aria-label="Code snippet. Choose the line with the bug.">
+        <button class="ln" data-ok="0"><span class="num">1</span><span><span class="k">function</span> averageRating(reviews) {</span></button>
+        <button class="ln" data-ok="0"><span class="num">2</span><span>  <span class="k">let</span> total = 0;</span></button>
+        <button class="ln" data-ok="1"><span class="num">3</span><span>  <span class="k">for</span> (<span class="k">let</span> i = 0; i &lt;= reviews.length; i++) {</span></button>
+        <button class="ln" data-ok="0"><span class="num">4</span><span>    total += reviews[i].stars;</span></button>
+        <button class="ln" data-ok="0"><span class="num">5</span><span>  }</span></button>
+        <button class="ln" data-ok="0"><span class="num">6</span><span>  <span class="k">return</span> total / reviews.length;</span></button>
+        <button class="ln" data-ok="0"><span class="num">7</span><span>}</span></button>
+      </div>
+      <p class="hint" aria-live="polite"></p>
+      <div class="review" role="status">
+        <div class="who"><img src="assets/revylx.png" alt="">Revylx <span class="sev">Bug · line 3</span></div>
+        <p>This loop runs one step too far. When <code>i</code> equals <code>reviews.length</code>, <code>reviews[i]</code> is undefined and <code>.stars</code> throws. Use <code>&lt;</code> instead of <code>&lt;=</code>.</p>
+        <pre><span class="del">-  for (let i = 0; i &lt;= reviews.length; i++) {</span>
+<span class="add">+  for (let i = 0; i &lt; reviews.length; i++) {</span></pre>
+      </div>
+      <p class="note">An illustration of the kind of comment Revylx leaves on a pull request.</p>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="deplx">
+  <div class="wrap center">
+    <p class="kicker reveal">Still in the workshop</p>
+    <h2 class="headline reveal d1">How Deplx will work.</h2>
+    <p class="sub reveal d2">You describe what you want. A small crew of AI agents does the rest, and checks in with you at every step that matters.</p>
+    <div class="steps">
+      <div class="step"><div class="i">1</div><div class="t">Idea</div><p>You describe what you want, in plain words.</p></div>
+      <div class="step"><div class="i">2</div><div class="t">Plan</div><p>It writes a spec and a design you can read and change.</p></div>
+      <div class="step"><div class="i">3</div><div class="t">Build</div><p>Agents write the code, each in its own sandbox.</p></div>
+      <div class="step"><div class="i">4</div><div class="t">Check</div><p>Separate reviewers test it, with proof, not promises.</p></div>
+      <div class="step"><div class="i">✓</div><div class="t">You decide</div><p>Nothing important ships without your OK.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="hello">
+  <div class="wrap center">
+    <p class="kicker reveal">About</p>
+    <h2 class="headline reveal d1">Hi, I’m Promod.</h2>
+    <div class="note-card reveal" style="background: var(--alt)">
+      <p>I’ve spent more than 25 years keeping large systems running at Yahoo, InMobi, Walmart and Affirm. Along the way, I built site reliability teams from scratch.</p>
+      <p>Over those years I watched talented engineers lose hours to work a machine could do: chasing bugs late in review, wiring up the same plumbing again and again, waiting on infrastructure.</p>
+      <p>Techyodl is my answer to that. We build practical tools, we use them ourselves first, and we only claim what we can show. If any of this sounds useful to you, I’d genuinely like to hear from you.</p>
+      <div class="sig"><div class="av" aria-hidden="true">PG</div><div><b>Promod Gangadharan</b><span>Founder &amp; CEO · <a class="more" style="font-size:15px" href="https://www.linkedin.com/in/promodk" target="_blank" rel="noopener">LinkedIn ›</a></span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta center" id="contact">
+  <div class="wrap">
+    <h2 class="headline reveal">Say hello.</h2>
+    <p class="sub reveal d1">Curious about a product, want early access, or just want to talk shop? I read every email.</p>
+    <div class="links reveal d2">
+      <a class="pill" href="mailto:tgpromod@techyodl.ai">Email me</a>
+      <a class="more" href="mailto:tgpromod@techyodl.ai">tgpromod@techyodl.ai ›</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2026 Techyodl. All rights reserved.</span>
+    <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:tgpromod@techyodl.ai">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.querySelector('nav'), btn = nav.querySelector('.menu-btn');
+  btn.addEventListener('click', () => { const o = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); });
+  nav.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }));
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // orbit spotlight
+  const P = [
+    { name: 'Revylx', line: 'Catches bugs before your teammates do.', href: '#products' },
+    { name: 'FuseZap', line: 'Gets new AI chips running today’s models.', href: '#products' },
+    { name: 'Deplx', line: 'Turns an idea into working software. Still in the workshop.', href: '#deplx' },
+  ];
+  const dots = [...document.querySelectorAll('.orbit2 .dot')], spot = document.querySelector('.orbit2 .spot');
+  let cur = 0, timer;
+  const show = (i) => {
+    cur = i; dots.forEach((d, k) => d.classList.toggle('on', k === i));
+    spot.classList.add('out');
+    setTimeout(() => { spot.querySelector('.name').textContent = P[i].name; spot.querySelector('.line').textContent = P[i].line; spot.querySelector('a').setAttribute('href', P[i].href); spot.classList.remove('out'); }, 250);
+  };
+  const auto = () => { clearInterval(timer); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => show((cur + 1) % P.length), 3800); };
+  dots.forEach((d, i) => d.addEventListener('click', () => { show(i); auto(); }));
+  dots[0].classList.add('on'); auto();
+
+  // spot the bug
+  const lines = [...document.querySelectorAll('.code .ln')], hint = document.querySelector('.bug .hint'), review = document.querySelector('.review');
+  let tries = 0, solved = false;
+  const reveal = () => { solved = true; lines.forEach(l => { if (l.dataset.ok === '1') l.classList.add('hit'); }); review.classList.add('show'); };
+  lines.forEach(l => l.addEventListener('click', () => {
+    if (solved) return;
+    if (l.dataset.ok === '1') { hint.textContent = 'Nice catch. Here’s what Revylx would say:'; reveal(); return; }
+    tries++; l.classList.add('miss');
+    hint.textContent = tries < 2 ? 'Not that one. Look closely at the loop.' : 'Tricky one. Here it is:';
+    if (tries >= 2) reveal();
+  }));
+
+  // deplx steps light up one by one
+  const steps = [...document.querySelectorAll('.step')];
+  const so = new IntersectionObserver((es) => es.forEach(e => {
+    if (!e.isIntersecting) return; so.disconnect();
+    steps.forEach((s, i) => setTimeout(() => s.classList.add('on'), i * 450));
+  }), { threshold: 0.3 });
+  if (steps.length) so.observe(steps[0].parentElement);
+})();
+</script>
+</body>
+</html>

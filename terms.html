@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of Use — techyodl</title>
+<meta name="description" content="Terms for using techyodl.ai.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Terms of Use — techyodl">
+<meta property="og:description" content="AI products for engineering teams: Revylx, FuseZap and Deplx.">
+<meta property="og:url" content="https://techyodl.ai/terms.html">
+<meta property="og:image" content="https://techyodl.ai/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://techyodl.ai/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html#top"><img src="logo.svg" alt="techyodl" width="122" height="26"></a>
+    <div class="menu" id="menu"><a href="index.html#products">Products</a><a href="index.html#bug">Try it</a><a href="index.html#hello">About</a><a class="menu-cta" href="index.html#contact">Contact</a></div>
+    <a class="pill" href="index.html#contact">Say hello</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</nav>
+
+<main class="legal">
+  <div class="wrap">
+    <h1>Terms of Use</h1>
+    <p class="updated">Last updated: October 16, 2026</p>
+
+    <p>These terms apply to your use of techyodl.ai, operated by Techyodl (“we”, “us”). By using the site, you agree to them.</p>
+
+    <h2>Information only</h2>
+    <p>This website describes Techyodl and its products, some of which are in active development. Content is provided for general information and may change without notice. Descriptions of features, capabilities and timelines are forward-looking and are not commitments. Nothing on this site is an offer or a binding agreement. Any design partnership, pilot or commercial relationship is governed only by a separate written agreement.</p>
+
+    <h2>Intellectual property</h2>
+    <p>The Techyodl name and logo, our product names and logos (including Revylx, FuseZap and Deplx), and this website’s design and content are owned by Techyodl. You may view and share pages from this site for your own non-commercial or evaluation purposes. You may not copy, modify or use our name, logo or content to suggest an affiliation or endorsement without our written permission.</p>
+
+    <h2>Acceptable use</h2>
+    <p>Do not misuse the site, for example by attempting to disrupt it, access it without authorization, or use automated means to overload it.</p>
+
+    <h2>Links to other sites</h2>
+    <p>The site may link to third-party websites. We are not responsible for their content or practices.</p>
+
+    <h2>No warranties</h2>
+    <p>The site is provided “as is” and “as available”, without warranties of any kind, express or implied, including accuracy, fitness for a particular purpose and non-infringement.</p>
+
+    <h2>Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, Techyodl is not liable for any indirect, incidental, special or consequential damages, or any loss of data, revenue or profits, arising from your use of the site.</p>
+
+    <h2>Changes</h2>
+    <p>We may update these terms from time to time. The date at the top shows when they last changed. Continued use of the site means you accept the updated terms.</p>
+
+    <h2>Contact</h2>
+    <p>Questions about these terms: <a href="mailto:tgpromod@techyodl.ai">tgpromod@techyodl.ai</a></p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2026 Techyodl. All rights reserved.</span>
+    <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:tgpromod@techyodl.ai">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.querySelector('nav'), btn = nav.querySelector('.menu-btn');
+  btn.addEventListener('click', () => { const o = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); });
+  nav.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }));
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
