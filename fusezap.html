@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FuseZap: get your chip running the models customers ask for</title>
+<meta name="description" content="FuseZap gets new chips running the models customers want, and keeps proving they still work after every update.">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FuseZap: get your chip running the models customers ask for">
+<meta property="og:description" content="FuseZap gets new chips running the models customers want, and keeps proving they still work after every update.">
+<meta property="og:url" content="https://techyodl.ai/fusezap.html">
+<meta property="og:image" content="https://techyodl.ai/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://techyodl.ai/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="logo.svg" alt="techyodl" width="122" height="26"></a>
+    <div class="menu" id="menu"><a href="revylx.html">Revylx</a><a href="fusezap.html" aria-current="page">FuseZap</a><a href="deplx.html">Deplx</a><a href="index.html#about">About</a><a class="menu-cta" href="#contact">Contact</a></div>
+    <a class="pill" href="#contact">Say hello</a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="phero" id="top">
+  <div class="wrap">
+    <p class="crumb"><a href="index.html">techyodl</a> / FuseZap</p>
+    <div class="id reveal"><img src="assets/fusezap.png" alt="" width="60" height="60"><b>FuseZap</b><span class="badge">Seeking design partners</span></div>
+    <h1 class="reveal d1">Your chip is ready. Let’s get your customers’ models running on it.</h1>
+    <p class="sub reveal d2">Chip makers build remarkable hardware. FuseZap takes care of the software their customers expect to just work on day one, and keeps proving it still works after every update.</p>
+    <div class="links reveal d2"><a class="pill" href="https://fusezap.ai">Visit fusezap.ai</a><a class="more" href="#how">How it works ›</a></div>
+  </div>
+</header>
+
+<section class="warm">
+  <div class="wrap split">
+    <div><p class="eyebrow">The problem</p><h2>“Can it run our model?” shouldn’t take months to answer.</h2></div>
+    <div class="prose">
+      <p>A customer evaluating a new chip asks one question first: will it run the model we already use? Too often the honest answer is “not yet”.</p>
+      <p>Behind that answer is a small compiler team working flat out, porting one model at a time while the newest models keep arriving. Meanwhile, the customer’s evaluation window is closing.</p>
+      <p>FuseZap exists so that answer becomes “yes, and here’s the proof”.</p>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="split">
+      <div><p class="eyebrow">How it works</p><h2>Two things your chip needs. We take care of both.</h2></div>
+      <div class="prose">
+        <p><b>FuseZap Core</b> plugs into your existing compiler and drivers. It turns each model into a small set of basic operations and generates the code for your chip, so supporting a new model doesn’t mean starting over. It comes with a server your customers can call the same way they call the tools they already use.</p>
+        <p><b>FuseZap Validate</b> checks every model against a trusted reference, token for token, and measures speed and accuracy after every model, SDK or driver change. When something breaks, you hear about it before your customers do.</p>
+      </div>
+    </div>
+    <div class="facts">
+      <div><h3>Where it runs today</h3><ul>
+        <li>Apple silicon, standard CPUs and NVIDIA GPUs</li>
+        <li>A 7-billion-parameter model on an NVIDIA H100, matching the reference on 99.3% of tokens</li>
+        <li>Compared head to head with the leading open-source engine on the same machine, with the method and every number published</li>
+      </ul></div>
+      <div class="next"><h3>What’s next</h3><ul>
+        <li>AWS Inferentia2, our first chip that isn’t a GPU</li>
+        <li>AMD GPUs in 2027</li>
+        <li>Your chip, together with you, as a design partner</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <blockquote class="callout reveal"><p>We publish what works and what doesn’t yet, including where we’re still slower than the best tools out there. If you build chips, I’d rather earn your trust with real numbers than with promises.</p><cite>Promod Gangadharan, Founder &amp; CEO</cite></blockquote>
+  </div>
+</section>
+
+<section class="pcta" id="contact">
+  <div class="wrap">
+    <h2 class="reveal">Building a chip? Let’s talk.</h2>
+    <p class="sub reveal d1">Everything about FuseZap, from the engineering notes to a sample qualification report, lives on its own site. Or write to me directly and tell me about your chip.</p>
+    <div class="links reveal d2"><a class="pill" href="https://fusezap.ai">Go to fusezap.ai</a><a class="more" href="mailto:tgpromod@techyodl.ai?subject=FuseZap">Email me ›</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Copyright © 2026 Techyodl. All rights reserved.</span>
+    <div class="legal-links"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:tgpromod@techyodl.ai">Contact</a></div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const nav = document.querySelector('nav'), btn = nav.querySelector('.menu-btn');
+  btn.addEventListener('click', () => { const o = nav.classList.toggle('open'); btn.setAttribute('aria-expanded', o); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); });
+  nav.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }));
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+})();
+</script>
+</body>
+</html>
