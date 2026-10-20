@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -35,7 +35,7 @@
     <p class="crumb"><a href="index.html">techyodl</a> / Revylx</p>
     <div class="id reveal"><img src="assets/revylx.png" alt="" width="60" height="60"><b>Revylx</b><span class="badge">Early access</span></div>
     <h1 class="reveal d1">A careful reviewer on every pull request.</h1>
-    <p class="sub reveal d2">Revylx reads each change your team makes, explains what could go wrong in plain words, and suggests the fix right where you’re already looking.</p>
+    <p class="sub reveal d2">Revylx reads every change your team makes, explains what could go wrong in plain words, and suggests the fix right where you’re already looking. On GitHub, GitLab, Bitbucket and Azure DevOps, with a quick second opinion in your editor too.</p>
     <div class="links reveal d2"><a class="pill" href="#contact">Ask for early access</a><a class="more" href="#bug">Spot the bug ›</a></div>
   </div>
 </header>
@@ -55,7 +55,7 @@
   <div class="wrap center">
     <p class="eyebrow">Try it yourself</p>
     <h2 class="headline reveal">Can you spot the bug?</h2>
-    <p class="sub reveal d1">There’s one line here that will break in production. Tap the line you think it is.</p>
+    <p class="sub reveal d1" style="font-size:18px">There’s one line here that will break in production. Tap the line you think it is.</p>
     <div class="bug reveal">
       <div class="code" role="group" aria-label="Code snippet. Choose the line with the bug.">
         <button class="ln" data-ok="0"><span class="num">1</span><span><span class="k">function</span> averageRating(reviews) {</span></button>
@@ -66,7 +66,7 @@
         <button class="ln" data-ok="0"><span class="num">6</span><span>  <span class="k">return</span> total / reviews.length;</span></button>
         <button class="ln" data-ok="0"><span class="num">7</span><span>}</span></button>
       </div>
-      <p class="hint" aria-live="polite"></p>
+      <div class="hintrow"><p class="hint" aria-live="polite"></p><button class="giveup" type="button" hidden>Show me</button></div>
       <div class="review" role="status">
         <div class="who"><img src="assets/revylx.png" alt="">Revylx <span class="sev">Bug · line 3</span></div>
         <p>This loop runs one step too far. When <code>i</code> equals <code>reviews.length</code>, <code>reviews[i]</code> is undefined and <code>.stars</code> throws. Use <code>&lt;</code> instead of <code>&lt;=</code>.</p>
@@ -80,43 +80,96 @@
 
 <section class="alt" id="how">
   <div class="wrap split">
-    <div><p class="eyebrow">How it fits into your day</p><h2>It works where your team already works.</h2></div>
+    <div><p class="eyebrow">How it fits into your day</p><h2>It works where your team already works.</h2><p style="color:#4A4955;margin-top:16px;font-size:16.5px">Nothing to install on anyone’s laptop for pull request reviews. Connect once, and every pull request gets a reviewer.</p></div>
     <ol class="flow">
-      <li><b>Connect your GitHub</b><span>Add Revylx to the repositories you choose. There’s nothing to install on anyone’s laptop.</span></li>
-      <li><b>Open a pull request as usual</b><span>Revylx reviews the change and leaves comments on the exact lines that need attention, each with a severity, so you know what matters first.</span></li>
-      <li><b>Talk to it in the pull request</b><span>Ask a question about the change, ask for a deeper look, or ask for a summary for whoever reviews next.</span></li>
-      <li class="you"><b>Accept the fix, or don’t<em class="yc">Your call</em></b><span>Ask Revylx to make the fix and it commits it to the branch. If a fix looks risky, it opens a separate draft for you instead. Changed your mind? It can undo its own commit.</span></li>
+      <li><b>Connect your code host</b><span>GitHub, GitLab (including your own GitLab server), Bitbucket or Azure DevOps. Pick the repositories you want reviewed.</span></li>
+      <li><b>Open a pull request as usual</b><span>Revylx posts a short summary with an overall risk level and a file-by-file walkthrough, then comments on the exact lines that need attention.</span></li>
+      <li><b>Push again, and it keeps up</b><span>Later pushes are reviewed on what changed since last time, repeat comments are left out, and threads that no longer apply can close themselves.</span></li>
+      <li class="you"><b>Accept a fix, or don’t</b><span>Many comments carry a suggested change you can apply in one click. Or ask Revylx to make the fix for you: it commits to the branch, checks its own work, and opens a separate pull request when it can’t push directly.</span></li>
     </ol>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="split">
-      <div><p class="eyebrow">What it looks for</p><h2>The things that bite you after you ship.</h2></div>
-      <div class="prose">
-        <p><b>Bugs</b> like off-by-one loops, missing checks and broken edge cases. <b>Security problems</b> in your own code. <b>Libraries with known holes</b>, and whether your code actually calls the risky part, so you’re not chasing warnings that don’t matter.</p>
-        <p>It also learns how your team writes code, so its suggestions sound like your codebase rather than a textbook. It reads TypeScript, JavaScript, Python, Go, Rust, Java and more.</p>
-      </div>
+    <div class="sechead"><div><p class="eyebrow">What every review looks for</p><h2>The things that bite you after you ship.</h2></div><p>Each comment is marked critical, high, medium or low, so the important ones never get lost among the nitpicks. A second pass weeds out weak findings before they reach you.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>Bugs and edge cases</h3><p>Off-by-one loops, missing checks, wrong conditions and the paths nobody tested.</p></div>
+      <div class="card reveal d1"><h3>Security problems</h3><p>Injection risks, unsafe patterns and leaked secrets, using well-known scanners alongside its own reading of the code.</p></div>
+      <div class="card reveal d2"><h3>Risky dependencies</h3><p>Libraries with published vulnerabilities, and whether your code actually reaches the risky part, so you don’t chase warnings that don’t matter.</p></div>
+      <div class="card reveal"><h3>Context from your codebase</h3><p>It indexes your repository, so it understands how a change affects the code around it, in more than 25 languages and formats, from TypeScript and Python to Go, Rust, Java, C++ and Terraform.</p></div>
+      <div class="card reveal d1"><h3>A clear go or no-go</h3><p>A quality-gate status on every pull request, so your branch rules can wait for a clean review.</p></div>
+      <div class="card reveal d2"><h3>Gets better with you</h3><p>Rate a comment with a thumbs up or down, apply or dismiss a fix, and it learns what your team cares about.</p></div>
     </div>
-    <div class="facts">
+  </div>
+</section>
+
+<section class="warm">
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">Talk to it in the pull request</p><h2>Just mention <code>@revylx</code>.</h2></div><p>Ask a question in plain words and it answers using your codebase. Or use one of these. Anyone can ask questions; changes to code need write access, and commands from outside contributors wait for a maintainer.</p></div>
+    <table class="kv">
+      <thead><tr><th>Say</th><th>What happens</th></tr></thead>
+      <tbody>
+        <tr><td><code>@revylx review</code></td><td>Reviews the latest changes. Add <code>--deep</code> for a slower, more thorough look.</td></tr>
+        <tr><td><code>@revylx re-review</code></td><td>Starts over and reviews the whole pull request from scratch.</td></tr>
+        <tr><td><code>@revylx focus security</code></td><td>Reviews again with one topic in mind, such as security or performance.</td></tr>
+        <tr><td><code>@revylx auto-fix</code></td><td>Fixes what it found and commits it, or opens a separate pull request. Try <code>--dry-run</code> to see the change first.</td></tr>
+        <tr><td><code>@revylx generate-tests</code></td><td>Suggests tests for the change, in the framework your project already uses.</td></tr>
+        <tr><td><code>@revylx revert</code></td><td>Undoes a commit Revylx made. It never touches anyone else’s.</td></tr>
+        <tr><td><code>@revylx</code> + your question</td><td>“Why does this function retry three times?” Answered from your codebase.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">In your editor</p><h2>A quick second opinion before you push.</h2></div><p>Extensions for VS Code and JetBrains IDEs bring Revylx closer to where you write code. They’re deliberately lighter than the pull request review, and we want to be clear about how.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>Quick checks as you save</h3><p>Instant, local checks for leftover debug code, unused imports and similar slips, on TypeScript and JavaScript. Nothing leaves your machine.</p></div>
+      <div class="card reveal d1"><h3>Review this file</h3><p>One shortcut sends the file you’re working on for a full review, with findings in your editor’s problems list. Included each month on paid plans.</p></div>
+      <div class="card reveal d2"><h3>What it doesn’t do yet</h3><p>The editor review looks at one file on its own, without the rest of your repository, and it doesn’t apply fixes for you. The full, context-aware review happens on the pull request.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">Make it yours</p><h2>Your rules, your tools, your team.</h2></div><p>Every team reviews differently. Revylx bends to yours instead of the other way round.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>A settings file in your repo</h3><p>Add <code>.revylx.yml</code> to give it house rules in plain words, set the lowest severity worth mentioning, skip folders, or ask for deep reviews every time.</p></div>
+      <div class="card reveal d1"><h3>Team-wide rules</h3><p>Write rules once in the dashboard and every repository follows them. Choose a thorough or a focused review style.</p></div>
+      <div class="card reveal d2"><h3>Alerts where you talk</h3><p>A Slack message when a review finishes, and signed webhooks so your own systems can react to reviews, comments and fixes.</p></div>
+      <div class="card reveal"><h3>A dashboard for the team</h3><p>Every review in one place, with trends, usage, the state of your repository index, and audit logs of who changed what.</p></div>
+      <div class="card reveal d1"><h3>Roles that make sense</h3><p>Owners, admins, members and viewers, with seats managed in one place.</p></div>
+      <div class="card reveal d2"><h3>Run it on your own servers</h3><p>For teams that need everything inside their own walls, Revylx can be deployed in your own infrastructure. Let’s talk about it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="facts" style="margin-top:0">
       <div><h3>Working today</h3><ul>
-        <li>Automatic review on every GitHub pull request</li>
-        <li>Line-by-line comments with severity and a suggested fix</li>
-        <li>Fixes committed on request, with a one-step undo</li>
-        <li>Questions, summaries and deeper reviews inside the pull request</li>
-        <li>Checks for vulnerable dependencies your code really uses</li>
+        <li>Automatic reviews on GitHub, GitLab, Bitbucket and Azure DevOps</li>
+        <li>Summaries, walkthroughs and line-by-line comments with severity</li>
+        <li>One-click suggestions, fixes on request, and a safe undo</li>
+        <li>Security, secrets and dependency checks on every review</li>
+        <li>Questions, focused and deep reviews, and test suggestions in the pull request</li>
+        <li>Editor extensions with local checks and single-file reviews</li>
       </ul></div>
       <div class="next"><h3>Still in progress</h3><ul>
-        <li>Reviews inside your editor while you write</li>
-        <li>Other code hosts beyond GitHub</li>
+        <li>Editor reviews that understand your whole repository, with fixes you can apply</li>
+        <li>Automatic review on save in JetBrains IDEs</li>
+        <li>Single sign-on for larger organisations</li>
+        <li>Ticket creation in Jira for critical findings</li>
         <li>Fewer false alarms. We’re honest that this is the hardest part, and it’s where most of our time goes.</li>
       </ul></div>
     </div>
   </div>
 </section>
 
-<section class="alt">
+<section class="warm">
   <div class="wrap">
     <blockquote class="callout reveal"><p>Your code is the most sensitive thing you’ll ever share with us. Before you connect a single repository, we’ll walk you through exactly what Revylx reads, what it keeps, for how long, and who can see it, and answer every question your security team has.</p><cite>Promod Gangadharan, Founder &amp; CEO</cite></blockquote>
   </div>
@@ -125,7 +178,7 @@
 <section class="pcta" id="contact">
   <div class="wrap">
     <h2 class="reveal">Want Revylx on your team’s pull requests?</h2>
-    <p class="sub reveal d1">We’re letting teams in a few at a time, so we can help each one properly. Tell me a little about your team and your code, and I’ll get back to you myself.</p>
+    <p class="sub reveal d1">We’re letting teams in a few at a time, so we can help each one properly. Tell me a little about your team, where your code lives and what you’d most like caught, and I’ll get back to you myself.</p>
     <div class="links reveal d2"><a class="pill" href="mailto:tgpromod@techyodl.ai?subject=Revylx%20early%20access">Ask for early access</a><a class="more" href="index.html">Back to techyodl ›</a></div>
   </div>
 </section>
@@ -144,16 +197,17 @@
   nav.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => { nav.classList.remove('open'); btn.setAttribute('aria-expanded', false); }));
   const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-  const lines = [...document.querySelectorAll('.code .ln')], hint = document.querySelector('.bug .hint'), review = document.querySelector('.review');
+  const lines = [...document.querySelectorAll('.code .ln')], hint = document.querySelector('.bug .hint'), review = document.querySelector('.review'), giveup = document.querySelector('.bug .giveup');
+  const HINTS = ['Not that one. Take another look.', 'Close, but no. Watch what happens on the last trip round the loop.', 'Still not it. Look closely at the loop condition.'];
   let tries = 0, solved = false;
-  const reveal = () => { solved = true; lines.forEach(l => { if (l.dataset.ok === '1') l.classList.add('hit'); }); review.classList.add('show'); };
+  const reveal = (msg) => { solved = true; hint.textContent = msg; giveup.hidden = true; lines.forEach(l => { l.disabled = true; if (l.dataset.ok === '1') l.classList.add('hit'); }); review.classList.add('show'); };
   lines.forEach(l => l.addEventListener('click', () => {
-    if (solved) return;
-    if (l.dataset.ok === '1') { hint.textContent = 'Nice catch. Here’s what Revylx would say:'; reveal(); return; }
-    tries++; l.classList.add('miss');
-    hint.textContent = tries < 2 ? 'Not that one. Look closely at the loop.' : 'Tricky one. Here it is:';
-    if (tries >= 2) reveal();
+    if (solved || l.classList.contains('miss')) return;
+    if (l.dataset.ok === '1') { reveal(tries ? 'There it is. Nice work.' : 'First try. Nice catch.'); return; }
+    l.classList.add('miss'); hint.textContent = HINTS[Math.min(tries, HINTS.length - 1)]; tries++;
+    if (tries >= 2) giveup.hidden = false;
   }));
+  giveup.addEventListener('click', () => reveal('Here’s the one. It’s easy to miss, which is exactly why it ships.'));
 
 })();
 </script>

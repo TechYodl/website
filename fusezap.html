@@ -17,7 +17,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preload" href="fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -45,37 +45,56 @@
     <div><p class="eyebrow">The problem</p><h2>“Can it run our model?” shouldn’t take months to answer.</h2></div>
     <div class="prose">
       <p>A customer evaluating a new chip asks one question first: will it run the model we already use? Too often the honest answer is “not yet”.</p>
-      <p>Behind that answer is a small compiler team working flat out, porting one model at a time while the newest models keep arriving. Meanwhile, the customer’s evaluation window is closing.</p>
-      <p>FuseZap exists so that answer becomes “yes, and here’s the proof”.</p>
+      <p>Behind that answer is a small compiler team working flat out, porting one model at a time while two to four notable new models arrive every month. Meanwhile, the customer’s evaluation window is closing.</p>
+      <p>FuseZap exists so the answer becomes “yes, and here’s the proof”.</p>
     </div>
   </div>
 </section>
 
 <section id="how">
   <div class="wrap">
-    <div class="split">
-      <div><p class="eyebrow">How it works</p><h2>Two things your chip needs. We take care of both.</h2></div>
-      <div class="prose">
-        <p><b>FuseZap Core</b> plugs into your existing compiler and drivers. It turns each model into a small set of basic operations and generates the code for your chip, so supporting a new model doesn’t mean starting over. It comes with a server your customers can call the same way they call the tools they already use.</p>
-        <p><b>FuseZap Validate</b> checks every model against a trusted reference, token for token, and measures speed and accuracy after every model, SDK or driver change. When something breaks, you hear about it before your customers do.</p>
-      </div>
+    <div class="sechead"><div><p class="eyebrow">How it works</p><h2>Two things your chip needs. We take care of both.</h2></div><p>FuseZap sits between your chip’s own toolchain and your customers’ applications. You keep your compiler and drivers; we build everything above them, and prove it works.</p></div>
+    <div class="grid2">
+      <div class="card reveal"><div class="ic">C</div><h3>FuseZap Core: get models running</h3><p>Every model breaks down into about 28 basic operations. FuseZap generates and tunes the code for those on your chip, and calls your own tuned kernels where they’re faster. On top sits a server your customers talk to exactly the way they talk to the tools they already use, with batching, streaming and 8-bit formats built in.</p></div>
+      <div class="card reveal d1"><div class="ic">V</div><h3>FuseZap Validate: keep them running</h3><p>Every model is checked against a trusted reference, token for token, and measured for speed and accuracy after every model, SDK or driver change. You get a qualification report your customers can read, and you hear about a regression before they do.</p></div>
     </div>
-    <div class="facts">
-      <div><h3>Where it runs today</h3><ul>
-        <li>Apple silicon, standard CPUs and NVIDIA GPUs</li>
-        <li>A 7-billion-parameter model on an NVIDIA H100, matching the reference on 99.3% of tokens</li>
-        <li>Compared head to head with the leading open-source engine on the same machine, with the method and every number published</li>
-      </ul></div>
-      <div class="next"><h3>What’s next</h3><ul>
-        <li>AWS Inferentia2, our first chip that isn’t a GPU</li>
-        <li>AMD GPUs in 2027</li>
-        <li>Your chip, together with you, as a design partner</li>
-      </ul></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>You bring</h3><p>A way to compile a kernel, a driver to allocate memory and launch work, and a board, card or simulator. Your tuned matrix and attention kernels are welcome too.</p></div>
+      <div class="card reveal d1"><h3>We build</h3><p>A backend for your chip in four small pieces, fused and tuned kernels for everything your libraries don’t cover, and the serving stack above them.</p></div>
+      <div class="card reveal d2"><h3>Before silicon</h3><p>A functional simulator with the same interface is enough to start. We prove correctness there, and tune for speed once real hardware arrives.</p></div>
     </div>
   </div>
 </section>
 
 <section class="alt">
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">Where we are</p><h2>Right first. Fast is catching up.</h2></div><p>In October we ran FuseZap beside vLLM, the open-source engine most teams already trust, on the same NVIDIA H100 with a 7-billion-parameter model. vLLM is still faster, and we say so. Earlier this month we were at 3% of its speed.</p></div>
+    <table class="kv">
+      <thead><tr><th>Measured on one NVIDIA H100</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Matches the reference model</td><td>99.3% of next words, against a bar of 99%</td></tr>
+        <tr><td>Speed, one person</td><td>70% of vLLM (115 vs 165 tokens a second)</td></tr>
+        <tr><td>Speed, 32 people at once</td><td>53% of vLLM (1,750 vs 3,314 tokens a second)</td></tr>
+        <tr><td>Quality cost at 8 bits</td><td>+0.1% (INT8) and +0.9% (FP8) in perplexity</td></tr>
+        <tr><td>Runs today on</td><td>Apple silicon, standard CPUs and NVIDIA GPUs. AWS Inferentia2 is next, our first chip that isn’t a GPU; AMD follows in 2027.</td></tr>
+      </tbody>
+    </table>
+    <p style="margin-top:18px;color:var(--grey);font-size:15px">The method, versions and every number are published on <a class="more" style="font-size:15px" href="https://fusezap.ai/engineering.html">fusezap.ai</a>.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">Working together</p><h2>Built so that saying yes is easy.</h2></div><p>We start every partnership with a 90-day pilot, paid in four stages tied to results we agree up front. You can stop at any gate, and you only pay for the stages you start.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>The chip code is yours</h3><p>Everything written for your chip belongs to you, with its tests, so your team can run it without us.</p></div>
+      <div class="card reveal d1"><h3>No lock-in</h3><p>Pilot customers get the compiler core as open source from the day they sign. The rest is protected by source-code escrow.</p></div>
+      <div class="card reveal d2"><h3>No royalties, nothing sent home</h3><p>No per-device fees, however many chips you ship. FuseZap runs entirely on your systems and never sends data back to us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="warm">
   <div class="wrap">
     <blockquote class="callout reveal"><p>We publish what works and what doesn’t yet, including where we’re still slower than the best tools out there. If you build chips, I’d rather earn your trust with real numbers than with promises.</p><cite>Promod Gangadharan, Founder &amp; CEO</cite></blockquote>
   </div>
@@ -84,8 +103,8 @@
 <section class="pcta" id="contact">
   <div class="wrap">
     <h2 class="reveal">Building a chip? Let’s talk.</h2>
-    <p class="sub reveal d1">Everything about FuseZap, from the engineering notes to a sample qualification report, lives on its own site. Or write to me directly and tell me about your chip.</p>
-    <div class="links reveal d2"><a class="pill" href="https://fusezap.ai">Go to fusezap.ai</a><a class="more" href="mailto:tgpromod@techyodl.ai?subject=FuseZap">Email me ›</a></div>
+    <p class="sub reveal d1">Start with a free compatibility assessment: tell us about your chip and toolchain, and we’ll show you what runs today and what it would take to get the rest. Everything else about FuseZap lives on its own site.</p>
+    <div class="links reveal d2"><a class="pill" href="https://fusezap.ai">Go to fusezap.ai</a><a class="more" href="mailto:tgpromod@techyodl.ai?subject=FuseZap%20assessment">Ask for an assessment ›</a></div>
   </div>
 </section>
 
