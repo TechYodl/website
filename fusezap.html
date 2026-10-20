@@ -55,13 +55,13 @@
   <div class="wrap">
     <div class="sechead"><div><p class="eyebrow">How it works</p><h2>Two things your chip needs. We take care of both.</h2></div><p>FuseZap sits between your chip’s own toolchain and your customers’ applications. You keep your compiler and drivers; we build everything above them, and prove it works.</p></div>
     <div class="grid2">
-      <div class="card reveal"><div class="ic">C</div><h3>FuseZap Core: get models running</h3><p>Every model breaks down into about 28 basic operations. FuseZap generates and tunes the code for those on your chip, and calls your own tuned kernels where they’re faster. On top sits a server your customers talk to exactly the way they talk to the tools they already use, with batching, streaming and 8-bit formats built in.</p></div>
-      <div class="card reveal d1"><div class="ic">V</div><h3>FuseZap Validate: keep them running</h3><p>Every model is checked against a trusted reference, token for token, and measured for speed and accuracy after every model, SDK or driver change. You get a qualification report your customers can read, and you hear about a regression before they do.</p></div>
+      <div class="card reveal"><div class="ic">C</div><h3>FuseZap Core: get models running</h3><p>Every model breaks down into about 28 basic operations. FuseZap generates the code for those on your chip. The few operations that decide speed, like matrix multiply and attention, get tuned kernels: yours, or ones we write together. On top sits a server your customers talk to exactly the way they talk to the tools they already use, with batching, streaming and 8-bit formats built in.</p></div>
+      <div class="card reveal d1"><div class="ic">V</div><h3>FuseZap Validate: keep them running</h3><p>Every model is checked against a trusted reference, token for token, and measured for speed and accuracy after every model, SDK or driver change. You get a qualification report your customers can read, and you hear about a regression before they do. Today we run it with you; a version that runs on its own in your CI is coming.</p></div>
     </div>
     <div class="grid3">
       <div class="card reveal"><h3>You bring</h3><p>A way to compile a kernel, a driver to allocate memory and launch work, and a board, card or simulator. Your tuned matrix and attention kernels are welcome too.</p></div>
       <div class="card reveal d1"><h3>We build</h3><p>A backend for your chip in four small pieces, fused and tuned kernels for everything your libraries don’t cover, and the serving stack above them.</p></div>
-      <div class="card reveal d2"><h3>Before silicon</h3><p>A functional simulator with the same interface is enough to start. We prove correctness there, and tune for speed once real hardware arrives.</p></div>
+      <div class="card reveal d2"><h3>Before silicon</h3><p>We can start on a functional simulator, prove correctness there, and tune for speed once real hardware arrives. We’re proving this path on AWS’s Inferentia simulator now.</p></div>
     </div>
   </div>
 </section>
@@ -79,7 +79,7 @@
         <tr><td>Runs today on</td><td>Apple silicon, standard CPUs and NVIDIA GPUs. AWS Inferentia2 is next, our first chip that isn’t a GPU; AMD follows in 2027.</td></tr>
       </tbody>
     </table>
-    <p style="margin-top:18px;color:var(--grey);font-size:15px">The method, versions and every number are published on <a class="more" style="font-size:15px" href="https://fusezap.ai/engineering.html">fusezap.ai</a>.</p>
+    <p style="margin-top:18px;color:var(--grey);font-size:15px">On NVIDIA, matrix multiply, attention and a few other hot spots use hand-written kernels; the rest is generated. The method, versions and every number are published on <a class="more" style="font-size:15px" href="https://fusezap.ai/engineering.html">fusezap.ai</a>.</p>
   </div>
 </section>
 

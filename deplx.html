@@ -53,67 +53,89 @@
 
 <section id="how">
   <div class="wrap split">
-    <div><p class="eyebrow">How it works</p><h2>Same steps a good team takes. You sign off on the big ones.</h2></div>
+    <div><p class="eyebrow">How it works</p><h2>Same steps a good team takes. You sign off on the big ones.</h2><p style="color:#4A4955;margin-top:16px;font-size:16.5px">Each step is done by a specialist with one job: a product lead, an architect, a security reviewer, designers, engineers and testers. Each one hands its work to the next, and reviewers never mark their own homework.</p></div>
     <ol class="flow">
-      <li><b>Tell it what you want</b><span>Describe the idea in a chat, as you would to a colleague.</span></li>
-      <li class="you"><b>Approve the plan<em class="yc">Your call</em></b><span>Deplx writes a short spec you can read, change and approve. Nothing is built until you say yes.</span></li>
-      <li class="you"><b>Approve the design<em class="yc">Your call</em></b><span>It proposes how the software should be built, with security thought through up front. You approve that too.</span></li>
-      <li><b>Tests first, then the build</b><span>The checks are written before the code, so “done” means something. The work happens in its own copy of your project, never on top of your files.</span></li>
-      <li><b>A second pair of eyes</b><span>Separate reviewers look at the result with fresh eyes, for design, security and quality. If they go round three times without agreeing, Deplx stops and asks you.</span></li>
-      <li class="you"><b>You decide what ships<em class="yc">Your call</em></b><span>Nothing goes out without your OK, and anything that can’t be undone always waits for you.</span></li>
+      <li><b>Tell it what you want</b><span>Describe the idea in the chat, as you would to a colleague. Deplx works out what kind of work it is and confirms it back to you. A question or a chat creates nothing.</span></li>
+      <li class="you"><b>Approve the plan</b><span>You get a short spec with numbered acceptance criteria. Before you approve, it walks you through any open questions, each with a recommendation: take it, choose another option, write your own answer, or let the team decide.</span></li>
+      <li class="you"><b>Approve the design</b><span>How it will be built, a security threat model written up front, and for anything on screen, mockups you can view full size, approve or set aside for later.</span></li>
+      <li><b>Tests first, then the build</b><span>Acceptance tests are written before the code, so “done” means something. Engineers then build in their own separate copy of your project. If two pieces of work collide, you’re told, never surprised.</span></li>
+      <li><b>A second pair of eyes</b><span>Separate reviewers check the design and the security, screens get a design check, and testers confirm every criterion. If a reviewer and a builder go round three times without agreeing, Deplx stops and asks you.</span></li>
+      <li class="you"><b>You approve the release</b><span>This step is always yours, even in hands-off mode. Today a release ends with a written release record in your project; shipping straight to your cloud is still to come.</span></li>
     </ol>
   </div>
 </section>
 
 <section class="warm">
   <div class="wrap">
-    <div class="sechead"><div><p class="eyebrow">What it can take on</p><h2>Not just new features.</h2></div><p>Different work needs a different path. Deplx picks the right one, so a one-line bug fix doesn’t go through the same ceremony as a brand-new feature.</p></div>
+    <div class="sechead"><div><p class="eyebrow">What it can take on</p><h2>Not just new features.</h2></div><p>Different work needs a different path, so a one-line bug fix doesn’t go through the same ceremony as a brand-new feature.</p></div>
     <div class="grid3">
-      <div class="card reveal"><h3>A new feature</h3><p>The full path: plan, design, tests, build, independent review, and your sign-off at each big step.</p></div>
-      <div class="card reveal d1"><h3>A bug fix</h3><p>Reproduce it first, fix it, prove the fix with a test, then review.</p></div>
-      <div class="card reveal d2"><h3>A screen or two</h3><p>Interface changes get mockups you can react to before any code is written, and a design check after.</p></div>
-      <div class="card reveal"><h3>Housekeeping</h3><p>Upgrades, configuration and the chores that keep a project healthy, with your sign-off before anything touches production.</p></div>
+      <div class="card reveal"><h3>A new feature</h3><p>The full path: plan, design and threat model, tests, build, independent review, validation, and your sign-off at the plan, the design and the release.</p></div>
+      <div class="card reveal d1"><h3>A bug fix</h3><p>A failing test that reproduces the bug comes first, then the fix, review and validation.</p></div>
+      <div class="card reveal d2"><h3>A screen or two</h3><p>Mockups you can react to before any code is written, then the build and a design check against what you approved.</p></div>
+      <div class="card reveal"><h3>Housekeeping</h3><p>Upgrades and configuration chores, with your sign-off before anything is released.</p></div>
       <div class="card reveal d1"><h3>When something breaks</h3><p>It works out what went wrong first, then fixes it through the bug-fix path, test and review included.</p></div>
-      <div class="card reveal d2"><h3>A security sweep</h3><p>A focused look across the project for weaknesses. Small concerns go on a list; real problems become fixes.</p></div>
+      <div class="card reveal d2"><h3>A security sweep</h3><p>A focused look across the project for weaknesses. Small concerns go on a list you can act on; real problems become fixes.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="sechead"><div><p class="eyebrow">Two ways to work</p><h2>Hands on, or hands off. You choose.</h2></div><p>Some days you want to approve every step. Other days you want to come back to finished work. Deplx works both ways, and you can switch whenever you like.</p></div>
-    <div class="grid2">
-      <div class="card reveal"><div class="ic">D</div><h3>Developer mode</h3><p>You see everything as it happens: the changes at every stage side by side, the project’s files, and a one-click jump into your own editor. Every approval is yours to give.</p></div>
-      <div class="card reveal d1"><div class="ic">G</div><h3>Guided mode</h3><p>Deplx carries on by itself within the limits you set, including a daily spending cap, and sends you a daily summary. Anything that can’t be undone, and anything you’ve kept for yourself, still waits for you. Every decision it made on your behalf is recorded exactly as if you’d clicked it.</p></div>
+    <div class="sechead"><div><p class="eyebrow">Nothing hidden</p><h2>Everything it writes, you can read.</h2></div><p>Deplx shows its work. Every plan, design and report lands in your project as a plain document, and the app shows you exactly what changed at each step.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>The paperwork a good team keeps</h3><p>Specs, designs, threat models, mockups, review and test reports, and a release record for every piece of work.</p></div>
+      <div class="card reveal d1"><h3>Changes, step by step</h3><p>See the code changes each step made, side by side, and open the project in VS Code or Cursor in one click.</p></div>
+      <div class="card reveal d2"><h3>A full history</h3><p>Every decision on a timeline, newest first, with anything Deplx decided for you clearly marked “Handled for you”.</p></div>
+      <div class="card reveal"><h3>An approvals inbox</h3><p>Everything waiting on you in one place, across all your projects, with anything you set aside kept on its own list.</p></div>
+      <div class="card reveal d1"><h3>Plain-language escalations</h3><p>When it gets stuck, it tells you what happened, what it recommends and how confident it is. You can send it back, accept, override or cancel.</p></div>
+      <div class="card reveal d2"><h3>What it costs</h3><p>Spending per task and per project, a gauge of how much of your plan you’ve used, and an export for your records.</p></div>
     </div>
-    <div class="callout reveal" style="margin-top:40px"><p>When Deplx gets stuck, it doesn’t just say “error”. It tells you in plain words what happened, what it recommends, and how confident it is, so you can decide in a minute.</p></div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="split">
-      <div><p class="eyebrow">Staying in control</p><h2>Built for people who don’t like surprises.</h2></div>
-      <div class="prose">
-        <p>You can pause any piece of work, send it back a step, or stop it. Every decision is written down, including the ones it made on your behalf, so you can always see why something happened.</p>
-        <p>It only touches the project you point it at. It hides secrets like passwords and keys from its records. And it works within spending limits you set, so a busy day never turns into a surprise bill.</p>
-      </div>
+    <div class="sechead"><div><p class="eyebrow">Two ways to work</p><h2>Hands on, or hands off. You choose.</h2></div><p>Some days you want to approve every step. Other days you want to come back to finished work. Switch whenever you like.</p></div>
+    <div class="grid2">
+      <div class="card reveal"><div class="ic">D</div><h3>Developer mode</h3><p>Every decision is yours. You also get a built-in editor with your project’s files, a helper that suggests changes, run and build commands with a problems list, a git panel for commits and branches, and code navigation for TypeScript and JavaScript.</p></div>
+      <div class="card reveal d1"><div class="ic">G</div><h3>Guided mode</h3><p>Deplx answers questions that have a clear recommendation, approves the plan and design when no reviewer objected, waits out usage limits and picks up again, and keeps a daily summary for you. Its spending on your behalf has a daily cap that starts at zero until you raise it. It never approves a release, waives a security block or cancels work for you.</p></div>
     </div>
-    <div class="facts">
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sechead"><div><p class="eyebrow">Staying in control</p><h2>Built for people who don’t like surprises.</h2></div><p>It runs on your own computer, on the projects you point it at, and nothing important happens without you.</p></div>
+    <div class="grid3">
+      <div class="card reveal"><h3>Pause, rewind, reprioritise</h3><p>Pause any piece of work with a reason, send it back to the plan or the design, move it sooner or later, or stop it.</p></div>
+      <div class="card reveal d1"><h3>A sensible pace</h3><p>Up to three pieces of work at once by default. It slows down near your limits and never runs two tasks on the same files at the same time.</p></div>
+      <div class="card reveal d2"><h3>Spending limits</h3><p>Limits per step and per task, and new work waits when you’re close to your plan’s limit.</p></div>
+      <div class="card reveal"><h3>Fenced in</h3><p>Work happens inside a sandbox, in its own copy of your project, and writes outside a role’s assigned area are caught.</p></div>
+      <div class="card reveal d1"><h3>Secrets stay secret</h3><p>Passwords, keys and credentials are hidden from its records, including ones tucked inside web addresses.</p></div>
+      <div class="card reveal d2"><h3>Only on your machine</h3><p>The app is reachable only from your own computer. Nothing is hosted, and there’s no account to create.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="warm">
+  <div class="wrap">
+    <div class="facts" style="margin-top:0">
       <div><h3>Working today</h3><ul>
         <li>The full path from idea to reviewed, tested code, with your approvals along the way</li>
-        <li>Several projects side by side, each piece of work in its own copy</li>
-        <li>Pause, resume, send back, and a full history of every decision</li>
-        <li>Spending limits per step, per task and per day</li>
-        <li>Runs on your own computer, on your own projects</li>
+        <li>Six kinds of work, each with its own path</li>
+        <li>Several projects side by side, with an approvals inbox across them</li>
+        <li>Developer and Guided modes, with a built-in editor in Developer mode</li>
+        <li>Spending limits, a cost view, and a full history of every decision</li>
       </ul></div>
       <div class="next"><h3>What we’re working toward</h3><ul>
-        <li>Starting from the tools your team already uses for tickets and docs</li>
+        <li>Releasing straight into your own cloud account</li>
+        <li>Starting from the tools your team already uses for tickets, docs and code</li>
         <li>Learning an existing codebase, not just new projects</li>
-        <li>Shipping straight into your own cloud account</li>
         <li>Updates where your team already talks</li>
+        <li>Recurring work, like a security sweep every week</li>
       </ul></div>
     </div>
+    <blockquote class="callout reveal" style="margin-top:48px"><p>The best test we know is to use it ourselves. Deplx has been building itself through its own process: more than 80 pieces of work so far, each one planned, reviewed and signed off the same way yours would be.</p><cite>Promod Gangadharan, Founder &amp; CEO</cite></blockquote>
   </div>
 </section>
 
