@@ -354,3 +354,4 @@ section { padding: 92px 0; }
   .pcta { padding: 64px 0; }
 }
 .sechead p.eyebrow { font-size: 13px; line-height: 1.4; color: var(--violet); margin: 0 0 10px; }
+.flow span { display: block; } .flow li { overflow-wrap: break-word; }
